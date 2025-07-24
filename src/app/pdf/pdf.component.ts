@@ -17,16 +17,25 @@ export class PdfComponent {
           table: {
             widths: ['auto', '*', 'auto', '*'],
             body: [
-              ['CLIENTE:', '', 'TELÉFONO:', ''],
+              // Fila 1: 2 columnas (CLIENTE / TELEFONO)
+              [
+                { text: 'CLIENTE:', colSpan: 2 }, '',
+                { text: 'TELÉFONO:', colSpan: 2 }, ''
+              ],
+              // Fila 2: 4 columnas (VEHICULO / TIPO / MODELO / AÑO)
               ['VEHÍCULO:', '', 'TIPO:', ''],
               ['MODELO:', '', 'AÑO:', ''],
+              // Fila 3: 4 columnas (PLACA / COLOR / KM / VIM)
               ['PLACA:', '', 'COLOR:', ''],
               ['KM:', '', 'VIM:', ''],
-              ['FECHA DE INGRESO:', '', 'FECHA SALIDA:', ''],
-              ['TÉCNICO:', '', '', '']
+              // Fila 4: 3 columnas (FECHA DE INGRESO / FECHA SALIDA / TECNICO)
+              [
+                { text: 'FECHA DE INGRESO:', colSpan: 2 }, '',
+                'FECHA SALIDA:', 'TÉCNICO:'
+              ]
             ]
           },
-          layout: 'noBorders'
+          layout: 'headerLineOnly'
         },
         { text: '\n' },
         {
