@@ -22,7 +22,7 @@ export class PdfComponent {
         {
           // 1. Logo – glued to the left margin
           image: imageLogo,
-          width: 100,
+          width: 90,
           absolutePosition: { x: 40, y: 40 },
         },
 
@@ -30,9 +30,8 @@ export class PdfComponent {
           text: ejemploDatos.ubicacion,
           width: 300,
           alignment: 'center',
-          margin: [0, 50, 0, 0],
+          margin: [0, 9, 0, 0],
           noWrap: false,
-          lineHeight: 1.2,
         },
 
         {
@@ -40,63 +39,83 @@ export class PdfComponent {
           fontSize: 15,
           bold: true,
           color: 'red',
-          absolutePosition: { x: 480, y: 50 }, // 595 - 100
+          absolutePosition: { x: 480, y: 50 }, // 595 - 90
         },
         {
           text: 'ORDEN DE TRABAJO',
           alignment: 'center',
-          fontSize: 18,
+          fontSize: 13,
           bold: true,
-          margin: [0, 10, 0, 10],
-          margintop: 20,
+          margin: [0, 9, 0, 9],
+          margintop: 9,
         },
         {
           table: {
-            widths: [
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-            ],
+            widths: ['*', '*', '*', '*', '*', '*', '*', '*'],
             body: [
               [
-                { text: 'CLIENTE: ' + ejemploDatos.cliente, colSpan: 4 },
+                {
+                  text: 'CLIENTE: ' + ejemploDatos.cliente,
+                  colSpan: 4,
+                  fontSize: 9,
+                },
                 {},
                 {},
                 {},
-                { text: 'TELÉFONO: ' + ejemploDatos.telefono, colSpan: 4 },
+                {
+                  text: 'TELÉFONO: ' + ejemploDatos.telefono,
+                  colSpan: 4,
+                  fontSize: 9,
+                },
                 {},
                 {},
                 {},
               ],
               [
-                { text: 'VEHÍCULO: ' + ejemploDatos.vehiculo, colSpan: 2 },
+                {
+                  text: 'VEHÍCULO: ' + ejemploDatos.vehiculo,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
-                { text: 'TIPO: ' + ejemploDatos.tipo, colSpan: 2 },
+                {
+                  text: 'TIPO: ' + ejemploDatos.tipo,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
-                { text: 'MODELO: ' + ejemploDatos.modelo, colSpan: 2 },
+                {
+                  text: 'MODELO: ' + ejemploDatos.modelo,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
-                { text: 'AÑO: ' + ejemploDatos.año, colSpan: 2 },
+                { text: 'AÑO: ' + ejemploDatos.año, colSpan: 2, fontSize: 9 },
                 {},
               ],
               [
-                { text: 'PLACA: ' + ejemploDatos.placa, colSpan: 2 },
+                {
+                  text: 'PLACA: ' + ejemploDatos.placa,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
-                { text: 'COLOR: ' + ejemploDatos.color, colSpan: 2 },
+                {
+                  text: 'COLOR: ' + ejemploDatos.color,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
-                { text: 'KM: ' + ejemploDatos.km, colSpan: 2 },
+                { text: 'KM: ' + ejemploDatos.km, colSpan: 2, fontSize: 9 },
                 {},
-                { text: 'VIM: ' + ejemploDatos.vim, colSpan: 2 },
+                { text: 'VIM: ' + ejemploDatos.vim, colSpan: 2, fontSize: 9 },
                 {},
               ],
               [
                 {
                   text: 'FECHA DE INGRESO: ' + ejemploDatos.fechaIngreso,
                   colSpan: 4,
+                  fontSize: 9,
                 },
                 {},
                 {},
@@ -104,9 +123,14 @@ export class PdfComponent {
                 {
                   text: 'FECHA SALIDA: ' + ejemploDatos.fechaSalida,
                   colSpan: 2,
+                  fontSize: 9,
                 },
                 {},
-                { text: 'TÉCNICO: ' + ejemploDatos.tecnico, colSpan: 2 },
+                {
+                  text: 'TÉCNICO: ' + ejemploDatos.tecnico,
+                  colSpan: 2,
+                  fontSize: 9,
+                },
                 {},
               ],
               [
@@ -115,7 +139,7 @@ export class PdfComponent {
                   colSpan: 8,
                   alignment: 'center',
                   bold: true,
-                  fontSize: 14,
+                  fontSize: 13,
                 },
                 {},
                 {},
@@ -126,7 +150,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo1, colSpan: 8 },
+                { text: ejemploDatos.trabajo1, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -136,7 +160,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo2, colSpan: 8 },
+                { text: ejemploDatos.trabajo2, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -146,7 +170,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo3, colSpan: 8 },
+                { text: ejemploDatos.trabajo3, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -156,7 +180,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo4, colSpan: 8 },
+                { text: ejemploDatos.trabajo4, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -166,7 +190,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo5, colSpan: 8 },
+                { text: ejemploDatos.trabajo5, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -176,7 +200,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo6, colSpan: 8 },
+                { text: ejemploDatos.trabajo6, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -186,7 +210,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo7, colSpan: 8 },
+                { text: ejemploDatos.trabajo7, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -196,7 +220,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo8, colSpan: 8 },
+                { text: ejemploDatos.trabajo8, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -206,7 +230,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo9, colSpan: 8 },
+                { text: ejemploDatos.trabajo9, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -216,7 +240,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo10, colSpan: 8 },
+                { text: ejemploDatos.trabajo9, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -226,7 +250,7 @@ export class PdfComponent {
                 {},
               ],
               [
-                { text: ejemploDatos.trabajo11, colSpan: 8 },
+                { text: ejemploDatos.trabajo11, colSpan: 8, fontSize: 9 },
                 {},
                 {},
                 {},
@@ -237,17 +261,6 @@ export class PdfComponent {
               ],
             ],
           },
-          layout: {
-            hLineWidth: () => 1,
-            vLineWidth: () => 1,
-            hLineColor: () => '#000',
-            vLineColor: () => '#000',
-            paddingTop: () => 4,
-            paddingBottom: () => 4,
-            paddingLeft: () => 6,
-            paddingRight: () => 6,
-          },
-          fontsize: 8,
         },
         {
           table: {
@@ -326,13 +339,13 @@ export class PdfComponent {
                         },
                       ],
 
-                      fontSize: 10,
+                      fontSize: 9,
                     },
                     {
                       text: 'OBSERVACIONES',
-                      fontSize: 10,
+                      fontSize: 9,
                       bold: true,
-                      marginLeft: 200,
+                      marginLeft: 90,
                     },
                   ],
                 },
@@ -350,7 +363,7 @@ export class PdfComponent {
                   columns: [
                     {
                       image: imageIndicator,
-                      width: 100,
+                      width: 90,
                       alignment: 'center',
                       justify: 'center',
                     },
@@ -406,7 +419,7 @@ export class PdfComponent {
                     },
                   ],
 
-                  fontSize: 10,
+                  fontSize: 9,
                 },
               ],
             ],
@@ -416,7 +429,9 @@ export class PdfComponent {
         {
           table: {
             widths: ['*'],
-            body: ejemploDatos.condiciones?.map((condicion) => [condicion]),
+            body: ejemploDatos.condiciones?.map((condicion) => [
+              { text: condicion, fontSize: 9 },
+            ]),
           },
         },
         {
@@ -425,17 +440,20 @@ export class PdfComponent {
               width: '*',
               text: 'NOMBRE Y FIRMA RECEPCION',
               alignment: 'center',
+              fontSize: 9,
             },
             {
               width: '*',
 
               text: 'NOMBRE Y FIRMA CLIENTE DEJA',
               alignment: 'center',
+              fontSize: 9,
             },
             {
               width: '*',
               text: 'NOMBRE Y FIRMA CLIENTE RECOGE',
               alignment: 'center',
+              fontSize: 9,
             },
           ],
           columnGap: 30,
