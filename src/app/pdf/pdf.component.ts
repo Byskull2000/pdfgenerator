@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 
-
+(pdfMake as any).vfs = (pdfFonts as any).vfs;
 
 @Component({
   selector: 'pdf-maker',
@@ -18,9 +18,12 @@ export class PdfComponent {
             widths: ['auto', '*', 'auto', '*'],
             body: [
               ['CLIENTE:', '', 'TELÉFONO:', ''],
-              ['VEHÍCULO:', '', 'TIPO:', '', 'MODELO:', '', 'AÑO:', ''],
-              ['PLACA:', '', 'COLOR:', '', 'KM:', '', 'VIM:', ''],
-              ['FECHA DE INGRESO:', '', 'FECHA SALIDA:', '', 'TÉCNICO:', '']
+              ['VEHÍCULO:', '', 'TIPO:', ''],
+              ['MODELO:', '', 'AÑO:', ''],
+              ['PLACA:', '', 'COLOR:', ''],
+              ['KM:', '', 'VIM:', ''],
+              ['FECHA DE INGRESO:', '', 'FECHA SALIDA:', ''],
+              ['TÉCNICO:', '', '', '']
             ]
           },
           layout: 'noBorders'
