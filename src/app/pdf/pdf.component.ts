@@ -328,6 +328,12 @@ export class PdfComponent {
 
                       fontSize: 10,
                     },
+                    {
+                      text: 'OBSERVACIONES',
+                      fontSize: 10,
+                      bold: true,
+                      marginLeft: 200,
+                    },
                   ],
                 },
               ],
