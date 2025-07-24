@@ -28,4 +28,6 @@ export interface DatosPDF {
   condiciones?: string[];
   accesorios?: string[];
   componentes?: string[];
+  exteriores?: string[];
+  interiores?: string[];
 }

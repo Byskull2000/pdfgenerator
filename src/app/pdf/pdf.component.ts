@@ -6,6 +6,7 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { ejemploDatos } from 'src/utils/data';
 import { imageLogo } from 'src/utils/imageLogo';
 import { imageIndicator } from 'src/utils/imageIndicator';
+import { imageAuto } from 'src/utils/imageAuto';
 
 (pdfMake as any).vfs = (pdfFonts as any).vfs;
 
@@ -234,26 +235,6 @@ export class PdfComponent {
                 {},
                 {},
               ],
-              [
-                { text: 'INVENTARIO DE VEHICULO', colSpan: 8 },
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-              ],
-              [
-                { text: 'EXTERIORES', colSpan: 4 },
-                {},
-                {},
-                {},
-                { text: 'INTERIORES', colSpan: 4 },
-                {},
-                {},
-                {},
-              ],
             ],
           },
           layout: {
@@ -268,6 +249,92 @@ export class PdfComponent {
           },
           fontsize: 8,
         },
+        {
+          table: {
+            widths: ['*'],
+            body: [
+              [
+                {
+                  type: 'none',
+                  ul: [
+                    {
+                      text: 'INVENTARIO DE VEHICULO',
+                      fontSize: 13,
+                      bold: true,
+                    },
+                    {
+                      columns: [
+                        {
+                          type: 'none',
+                          ul: [
+                            {
+                              text: 'EXTERIORES',
+                              alignment: 'center',
+                              bold: true,
+                            },
+                            {
+                              columns: [
+                                '',
+                                { text: 'SI', width: 15 },
+                                { text: 'NO', width: 15 },
+                              ],
+                            },
+                          ].concat(
+                            (ejemploDatos.exteriores ?? []).map((exterior) => {
+                              return {
+                                columns: [
+                                  exterior,
+                                  { text: '__', width: 15 },
+                                  { text: '__', width: 15 },
+                                ],
+                              };
+                            })
+                          ),
+                        },
+                        {
+                          image: imageAuto,
+                          width: 150,
+                          alignment: 'center',
+                          marginTop: 30,
+                        },
+                        {
+                          type: 'none',
+                          ul: [
+                            {
+                              text: 'INTERIORES',
+                              alignment: 'center',
+                              bold: true,
+                            },
+                            {
+                              columns: [
+                                '',
+                                { text: 'SI', width: 15 },
+                                { text: 'NO', width: 15 },
+                              ],
+                            },
+                          ].concat(
+                            (ejemploDatos.interiores ?? []).map((interior) => {
+                              return {
+                                columns: [
+                                  interior,
+                                  { text: '__', width: 15 },
+                                  { text: '__', width: 15 },
+                                ],
+                              };
+                            })
+                          ),
+                        },
+                      ],
+
+                      fontSize: 10,
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+
         {
           table: {
             widths: ['*'],
