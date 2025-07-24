@@ -26,4 +26,6 @@ export interface DatosPDF {
   numeroOrden?: string;
   ubicacion?: string;
   condiciones?: string[];
+  accesorios?: string[];
+  componentes?: string[];
 }

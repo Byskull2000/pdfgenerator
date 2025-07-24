@@ -4,7 +4,8 @@ import { withDebugTracing } from '@angular/router';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { ejemploDatos } from 'src/utils/data';
-import { image64 } from 'src/utils/image64';
+import { imageLogo } from 'src/utils/imageLogo';
+import { imageIndicator } from 'src/utils/imageIndicator';
 
 (pdfMake as any).vfs = (pdfFonts as any).vfs;
 
@@ -19,7 +20,7 @@ export class PdfComponent {
       content: [
         {
           // 1. Logo – glued to the left margin
-          image: image64,
+          image: imageLogo,
           width: 100,
           absolutePosition: { x: 40, y: 40 },
         },
@@ -274,19 +275,65 @@ export class PdfComponent {
               [
                 {
                   columns: [
-                    {},
                     {
-                      width: '*',
-                      type: 'none',
-                      ul: [{ columns: ['', 'SI', 'NO'] }, 'Item 1'],
+                      image: imageIndicator,
+                      width: 100,
+                      alignment: 'center',
+                      justify: 'center',
                     },
                     {
-                      width: '*',
-                      text: 'NOMBRE Y FIRMA CLIENTE RECOGE',
-                      alignment: 'center',
+                      type: 'none',
+                      ul: [
+                        { text: 'ACCESORIOS', alignment: 'center', bold: true },
+                        {
+                          columns: [
+                            '',
+                            { text: 'SI', width: 15 },
+                            { text: 'NO', width: 15 },
+                          ],
+                        },
+                      ].concat(
+                        (ejemploDatos.accesorios ?? []).map((accesorio) => {
+                          return {
+                            columns: [
+                              accesorio,
+                              { text: '__', width: 15 },
+                              { text: '__', width: 15 },
+                            ],
+                          };
+                        })
+                      ),
+                    },
+                    {
+                      type: 'none',
+                      ul: [
+                        {
+                          text: 'COMPONENTES MECANICOS',
+                          alignment: 'center',
+                          bold: true,
+                        },
+                        {
+                          columns: [
+                            '',
+                            { text: 'SI', width: 15 },
+                            { text: 'NO', width: 15 },
+                          ],
+                        },
+                      ].concat(
+                        (ejemploDatos.accesorios ?? []).map((accesorio) => {
+                          return {
+                            columns: [
+                              accesorio,
+                              { text: '__', width: 15 },
+                              { text: '__', width: 15 },
+                            ],
+                          };
+                        })
+                      ),
                     },
                   ],
-                  columnGap: 30,
+
+                  fontSize: 10,
                 },
               ],
             ],
