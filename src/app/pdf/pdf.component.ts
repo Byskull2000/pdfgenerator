@@ -438,27 +438,30 @@ export class PdfComponent {
           columns: [
             {
               width: '*',
-              text: 'NOMBRE Y FIRMA RECEPCION',
-              alignment: 'center',
-              fontSize: 9,
+              stack: [
+                { text: '_________________________', alignment: 'center' },
+                { text: 'NOMBRE Y FIRMA RECEPCION', alignment: 'center', fontSize: 9 },
+              ]
             },
             {
               width: '*',
-
-              text: 'NOMBRE Y FIRMA CLIENTE DEJA',
-              alignment: 'center',
-              fontSize: 9,
+              stack: [
+                { text: '_________________________', alignment: 'center' },
+                { text: 'NOMBRE Y FIRMA CLIENTE DEJA', alignment: 'center', fontSize: 9 },
+              ]
             },
             {
               width: '*',
-              text: 'NOMBRE Y FIRMA CLIENTE RECOGE',
-              alignment: 'center',
-              fontSize: 9,
+              stack: [
+                { text: '_________________________', alignment: 'center' },
+                { text: 'NOMBRE Y FIRMA CLIENTE RECOGE', alignment: 'center', fontSize: 9 },
+              ]
             },
           ],
           columnGap: 30,
           marginTop: 50,
-        },
+        }
+
       ],
       styles: {
         categorias: {
