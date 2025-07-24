@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -36,6 +37,7 @@ export class PdfComponent {
       trabajo9?: string;
       trabajo10?: string;
       trabajo11?: string;
+      numeroOrden?: string;
     }
 
     // Ejemplo de datos
@@ -64,10 +66,12 @@ export class PdfComponent {
       trabajo9: 'Revisión de sistema de refrigeración',
       trabajo10: 'Revisión de sistema eléctrico',
       trabajo11: 'Inspección general',
+      numeroOrden: '123456',
     };
-    
+
     const docDefinition = {
       content: [
+        
         {
           table: {
             widths: ['auto', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
@@ -94,17 +98,17 @@ export class PdfComponent {
                 { text: 'TÉCNICO: ' + ejemploDatos.tecnico, colSpan: 2 }, {}
               ],
               [{ text: 'TRABAJOS A REALIZAR', colSpan: 8, alignment: 'center', bold: true, fontSize: 14 }, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo1, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo2, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo3, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo4, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo5, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo6, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo7, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo8, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo9, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo10, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
-              [{ text: ejemploDatos.trabajo11, colSpan: 8}, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo1, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo2, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo3, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo4, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo5, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo6, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo7, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo8, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo9, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo10, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
+              [{ text: ejemploDatos.trabajo11, colSpan: 8 }, {}, {}, {}, {}, {}, {}, {}],
             ]
           },
           layout: {
