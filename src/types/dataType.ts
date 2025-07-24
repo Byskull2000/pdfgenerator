@@ -1,0 +1,29 @@
+export interface DatosPDF {
+  cliente: string;
+  telefono: string;
+  vehiculo: string;
+  tipo: string;
+  modelo: string;
+  año: string;
+  placa: string;
+  color: string;
+  km: string;
+  vim: string;
+  fechaIngreso: string;
+  fechaSalida: string;
+  tecnico: string;
+  trabajo1?: string;
+  trabajo2?: string;
+  trabajo3?: string;
+  trabajo4?: string;
+  trabajo5?: string;
+  trabajo6?: string;
+  trabajo7?: string;
+  trabajo8?: string;
+  trabajo9?: string;
+  trabajo10?: string;
+  trabajo11?: string;
+  numeroOrden?: string;
+  ubicacion?: string;
+  condiciones?: string[];
+}
